@@ -9,7 +9,7 @@ fecha: 18/03/2023
 #include <iostream>
 using namespace std;
 
-bool is_seven(int number) {
+bool last_is_seven(int number) {
   int last_digit = number % 10;
   if ( last_digit == 7 ) {
     return true;
@@ -19,25 +19,19 @@ bool is_seven(int number) {
 }
 
 bool is_prime(int number) {
-  int counter = 0;
-  for ( int i = 1; i <= number; i++ ) {
+  for ( int i = 2; i <= number/2; i++ ) {
     if ( number % i == 0 ) {
-      counter++;
+      return false;
     }
   }
-  if ( counter == 2 ) {
-    return true;
-  } else {
-    return false;
-  }
+  return true;
 }
 
 int main() {
   int number;
   for ( int i = 10000; i <= 100000; i++ ) {
-    if ( is_seven(i) and is_prime(i) ) {
+    if ( last_is_seven(i) and is_prime(i) ) {
       cout << i << endl;
       }
     }
-
 }
