@@ -43,7 +43,7 @@ bool last_is_seven(int num)
 
 int main()
 {
-  int arr[10];
+  int arr[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   int counter = 0;
 
   int min, max;
