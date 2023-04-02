@@ -70,7 +70,8 @@ int main()
   for (int i = min; i <= max; i++)
   {
     double square = sqrt(i);
-    if (is_prime(square) && last_is_seven(square))
+    int square_int = sqrt(i);
+    if (is_prime(square) && last_is_seven(square) && !(square - square_int != 0))
     {
       arr[counter] = i;
       counter++;
