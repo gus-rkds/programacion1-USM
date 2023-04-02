@@ -84,11 +84,10 @@ int main()
 
   /*pinta el array creado*/
   cout << "Los primeros 10 numeros cuya raiz cuadrada es un numero primo que termina en 7 son: ";
-  for (int i = 0; i < 10; i++)
+  for (int el : arr)
   {
-    cout << arr[i] << " ";
+    cout << el << endl;
   }
-  cout << endl;
 
   return 0;
 }
