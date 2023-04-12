@@ -1,47 +1,42 @@
+/*
+Programa elaborado por Gustavo Alviarez
+Universidad Santa María
+Programación I
+elaborado 12-4-2023
+*/
 #include <iostream>
 #include <cmath>
 
 using namespace std;
 
-bool esPrimo(int n) {
-    if (n <= 1) {
-        return false;
+// funcion que devuelve verdadero o falso si el numero es primo o no
+bool esPrimo(int num)
+{
+  // función para comprobar si un número es primo o no
+  for (int i = 2; i <= num / 2; i++)
+  {
+    if (num % i == 0)
+    {
+      return false;
     }
-
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) {
-            return false;
-        }
-    }
-
-    return true;
+  }
+  return true;
 }
 
-int main() {
+main() {
+    // contador para saber cuantos numeros se han encontrado
     int contador = 0;
-    int numero = 500000;
 
-    while (contador < 10) {
-        int division = numero / 14;
-        double raiz = sqrt(division);
-
-        if (raiz == floor(raiz) && esPrimo((int)raiz) && (int)raiz % 10 == 3) {
-            cout << numero << " - " << division << " - " << (int)raiz << endl;
+    // ciclo que recorre los numeros desde 500000 hasta que se encuentren los 10 numeros que cumplan las condiciones
+    for (int i = 10000; contador < 20; i++) {
+        // raiz cuadrada del numero en su version double y int para verificar si es entero
+        double raiz = sqrt(i);
+        int raizInt = sqrt(i);
+        // si la raiz del numero es entera, es primo y termina en 3, se imprime el numero, su division entre 14 y la raiz cuadrada
+        if (!(raiz - raizInt != 0) && esPrimo(raizInt) && raizInt % 10 == 7 ) {
+            cout << i << " - " << raizInt << endl;
             contador++;
         }
-
-        numero++;
     }
 
-    return 0;
 }
-
-/*
-La función esPrimo verifica si un número dado es primo o no. La función main 
-utiliza un ciclo while para iterar a través de los números desde 500000 en adelante, 
-y se detiene cuando se encuentran los primeros 10 números que cumplen con las 
-especificaciones. Para cada número, se calcula su división entre 14 y su raíz cuadrada. 
-Luego, se verifica si la raíz cuadrada es un número entero y si es primo y termina en 3. 
-Si se cumplen todas estas condiciones, se muestra el número, su división entre 14 
-y la raíz cuadrada
-*/
