@@ -2,6 +2,7 @@
 #include <string>
 #include <ctime>
 #include <conio.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -30,7 +31,7 @@ main() {
     int seconds = remaining_time % 60;
     cout << "Tiempo restante: " << minutes << ":" << seconds << "\r";
     cout.flush(); // Flush the output buffer
-    _sleep(1000); // Sleep for 1 second
+    Sleep(1000); // Sleep for 1 second
 
     // Check for user input
     if (_kbhit()) { // Check if a key has been pressed
