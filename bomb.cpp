@@ -30,7 +30,7 @@ main() {
     int seconds = remaining_time % 60;
     cout << "Tiempo restante: " << minutes << ":" << seconds << "\r";
     cout.flush(); // Flush the output buffer
-    Sleep(1000); // Sleep for 1 second
+    _sleep(1000); // Sleep for 1 second
 
     // Check for user input
     if (_kbhit()) { // Check if a key has been pressed
