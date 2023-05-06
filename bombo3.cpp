@@ -1,16 +1,3 @@
-/*
-Programa que simula una bomba que explota en 5 minutos. El usuario puede desactivar la bomba ingresando 
-un código secreto. Si el usuario no ingresa el código secreto, la bomba explota. 
-Por cada intento fallido se resta 1 minuto del tiempo restante.
-
-El código secreto es: af
-
-creadores: 
-    - Gustavo Alviarez
-    - Jareanny Diaz
-    - Cristian Hernandez
-*/
-
 #include <iostream>
 #include <conio.h> // Biblioteca para utilizar kbhit() y getch()
 #include <windows.h>
@@ -26,7 +13,7 @@ int main() {
         if (kbhit()) { // Si el usuario ha ingresado algo por teclado
             char c1 = getch(); // Leer primer caracter
             char c2 = getch(); // Leer segundo caracter
-            if (c1 == 'a' || c1 == 'A' && c2 == 'f' || c2 == 'F') { // Si el código ingresado es correcto
+            if (c1 == 'a' && c2 == 'b') { // Si el código ingresado es correcto
                 cout << "¡Bomba desactivada!\n";
                 return 0;
             } else { // Si el código ingresado es incorrecto
@@ -39,6 +26,6 @@ int main() {
         }
     }
 
-    cout << "¡BOOOOOM, La bomba ha explotado!\n";
+    cout << "¡La bomba ha explotado!\n";
     return 0;
 }

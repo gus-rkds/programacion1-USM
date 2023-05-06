@@ -1,0 +1,1 @@
+cout << "Tiempo restante: " << minutes << ":" << seconds << "\r";
