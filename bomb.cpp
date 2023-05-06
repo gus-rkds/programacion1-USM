@@ -2,7 +2,6 @@
 #include <string>
 #include <ctime>
 #include <conio.h>
-#include <windows.h>
 
 using namespace std;
 
@@ -35,7 +34,7 @@ main() {
 
     // Check for user input
     if (_kbhit()) { // Check if a key has been pressed
-      system("cls"); // Clear the screen
+      cout << "\r                            \r"; // Clear the previous output 
       char c = _getch();
       string input_code = "";
       while (c != '\r') {  // Wait for the user to press Enter
