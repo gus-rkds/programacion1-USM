@@ -8,7 +8,7 @@
 
 using namespace std;
 
-main() 
+int main() 
 
 {
 
@@ -44,5 +44,7 @@ Q=Q+0.1;
 
 cout <<endl<<endl<<"El angulo donde el area se hace maxima es = "<<aux2<<" grados"<<endl<<endl;
 system("pause");
+
+return 0;
 }
 
